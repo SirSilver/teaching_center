@@ -35,6 +35,7 @@ def setup(request) -> None:
     register_for_course = RegisterForCourse(
         1,
         student,
+        5,
         course_repo=course_repo,
         lesson_repo=lesson_repo
     )
@@ -50,4 +51,4 @@ class TestRegisterForCourse:
     repo: FakeLessonRepo
 
     def test_can_create_lesson_in_repo(self) -> None:
-        assert len(self.repo._lessons) == self.course.number_of_lessons
+        assert len(self.repo._lessons) == len(self.course)

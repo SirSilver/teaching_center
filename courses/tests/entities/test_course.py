@@ -23,7 +23,7 @@ class TestCourse:
     course: Course
 
     def test_can_find_available_hours(self) -> None:
-        result = self.course.get_available_hours()
+        result = self.course.get_available_hours(datetime.today())
         assert result.periods[0].time.start.hour == 10
         assert result.periods[1].time.start.hour == 10
         assert len(result.periods) == 2
