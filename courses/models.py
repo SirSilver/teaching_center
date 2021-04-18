@@ -86,6 +86,7 @@ class Lesson(models.Model):
         on_delete=models.CASCADE,
         related_name='lessons'
     )
+    starts_at = models.DateTimeField('Beginning time')
     duration = models.PositiveSmallIntegerField('Duration')
     student = models.OneToOneField(
         verbose_name='Student',
